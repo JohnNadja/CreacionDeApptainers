@@ -1,0 +1,7 @@
+# Introducción a Apptainer en Ubuntu 22.04
+
+Apptainer, anteriormente conocido como Singularity, es una solución de contenedores diseñada específicamente para facilitar la creación, ejecución y gestión de contenedores en entornos de computación de alto rendimiento (HPC) y ciencia de datos. A diferencia de otras soluciones de contenedores, Apptainer permite a los usuarios empaquetar aplicaciones, bibliotecas y sus dependencias en un contenedor de forma que pueda ejecutarse de manera eficiente y segura en cualquier entorno Linux, incluido Ubuntu 22.04.
+
+La creación de contenedores en Ubuntu 22.04 con Apptainer es sencilla y directa. Los usuarios pueden comenzar instalando Apptainer desde los repositorios oficiales o mediante la compilación del código fuente. Una vez instalado, se pueden crear contenedores a partir de definiciones escritas en archivos de texto, lo que permite una reproducibilidad y portabilidad excepcionales de las aplicaciones científicas y de investigación entre diferentes plataformas y entornos de computación.
+
+Este documento proporcionará una guía paso a paso sobre cómo instalar Apptainer en Ubuntu 22.04 y cómo comenzar a crear y gestionar contenedores para sus aplicaciones de ciencia de datos y HPC.
