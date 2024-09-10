@@ -1,0 +1,30 @@
+BootStrap: docker
+From: ubuntu:22.04
+%post
+   touch /etc/localtime
+   apt-get -y update
+   apt-get -y install curl wget python3 iproute2 net-tools vim python3-pip python3-venv
+# influxDB
+   curl -LO https://download.influxdata.com/influxdb/releases/influxdb2-2.7.6_linux_amd64.tar.gz
+   tar xvzf ./influxdb2-2.7.6_linux_amd64.tar.gz
+   cp ./influxdb2-2.7.6/usr/bin/influxd /usr/local/bin/
+   mkdir /var/run/influxdb
+   chown $USER:$USER /var/run/influxdb
+%environment
+   export LC_ALL=C
+   # comentar la siguiente linea para idioma en inglés
+   export LANGUAGE=es_MX:es
+%runscript
+   #influxd --http-bind-address localhost:8086 --reporting-disabled
+%test
+   echo "InfluxDB...: "
+   (influxd version) && echo "Éxito en la instalación"
+
+
+
+
+
+
+
+
+

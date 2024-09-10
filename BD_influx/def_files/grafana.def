@@ -1,0 +1,23 @@
+BootStrap: docker
+From: ubuntu:22.04
+
+%post
+   touch /etc/localtime
+   apt-get -y update
+   apt-get -y install curl wget python3 iproute2 net-tools vim python3-pip python3-venv apt-transport-https software-properties-common
+
+#Grafana 
+   mkdir -p /etc/apt/keyrings/
+   wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | tee /etc/apt/keyrings/grafana.gpg > /dev/null
+   echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | tee -a /etc/apt/sources.list.d/grafana.list
+   apt-get update
+   apt-get install grafana-enterprise -y
+%environment
+   export LC_ALL=C
+   #comentar la siguiente linea para idioma en inglés
+   export LANGUAGE=es_MX:es
+%test
+   echo "Grafana CLI...: "
+   (grafana-cli -v) && echo "Exito en la instalación"
+   echo "Grafana Server...: "
+   (grafana-server -v) && echo "Éxito en la instalación"
