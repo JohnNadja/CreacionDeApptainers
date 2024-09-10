@@ -196,7 +196,6 @@ Para obtener más información sobre Apptainer, consulte la [documentación ofic
 
 
 
-#enlace a archivo dentro del repositorio
 ### [Creación de InfluxDB con Telegraf](./BD_influx/Influx_%26_Telegraf.md)
 
 ### [Conexión de InfluxDB a Grafana](./BD_influx/Grafana_%26_Influx.md)
